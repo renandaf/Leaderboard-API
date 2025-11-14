@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 // GET top 10 highest times
 router.get('/top', async (req, res) => {
   try {
-    const times = await Times.find().sort({ time: -1 }).limit(10);
+    const times = await Times.find().sort({ time: 1 }).limit(10);
     res.json(times);
   } catch (err) {
     res.status(500).send(`Server error while fetching top Time',${err.message}`);
